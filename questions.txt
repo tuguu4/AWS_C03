@@ -280,6 +280,143 @@ B. Create an encryption key. Store the key in AWS Secrets Manager. Use the key t
 C. Generate a certificate in AWS Certificate Manager (ACM). Enable SSL/TLS on the DB instances by using the certificate.
 D. Generate a certificate in AWS Identity and Access Management (IAM). Enable SSL/TLS on the DB instances by using the certificate.
 
+331)
+A company must migrate 20 TB of data from a data center to the AWS Cloud within 30 days. The company’s network bandwidth is limited to 15 Mbps and cannot exceed 70% utilization.
+
+What should a solutions architect do to meet these requirements?
+
+A. Use AWS Snowball.
+B. Use AWS DataSync.
+C. Use a secure VPN connection.
+D. Use Amazon S3 Transfer Acceleration.
+
+332)
+A company needs to provide its employees with secure access to confidential and sensitive files. The company wants to ensure that the files can be accessed only by authorized users. The files must be downloaded securely to the employees’ devices.
+
+The files are stored in an on-premises Windows file server. However, due to an increase in remote usage, the file server is running out of capacity.
+.
+Which solution will meet these requirements?
+
+A. Migrate the file server to an Amazon EC2 instance in a public subnet. Configure the security group to limit inbound traffic to the employees’ IP addresses.
+B. Migrate the files to an Amazon FSx for Windows File Server file system. Integrate the Amazon FSx file system with the on-premises Active Directory. Configure AWS Client VPN.
+C. Migrate the files to Amazon S3, and create a private VPC endpoint. Create a signed URL to allow download.
+D. Migrate the files to Amazon S3, and create a public VPC endpoint. Allow employees to sign on with AWS IAM Identity Center (AWS Single Sign-On).
+
+333)
+A company’s application runs on Amazon EC2 instances behind an Application Load Balancer (ALB). 
+The instances run in an Amazon EC2 Auto Scaling group across multiple Availability Zones. 
+On the first day of every month at midnight, the application becomes much slower when the month-end financial calculation batch runs. 
+This causes the CPU utilization of the EC2 instances to immediately peak to 100%, which disrupts the application.
+
+What should a solutions architect recommend to ensure the application is able to handle the workload and avoid downtime?
+
+A. Configure an Amazon CloudFront distribution in front of the ALB.
+B. Configure an EC2 Auto Scaling simple scaling policy based on CPU utilization.
+C. Configure an EC2 Auto Scaling scheduled scaling policy based on the monthly schedule.
+D. Configure Amazon ElastiCache to remove some of the workload from the EC2 instances.
+
+334)
+A company wants to give a customer the ability to use on-premises Microsoft Active Directory to download files that are stored in Amazon S3. 
+The customer’s application uses an SFTP client to download the files.
+
+Which solution will meet these requirements with the LEAST operational overhead and no changes to the customer’s application?
+
+A. Set up AWS Transfer Family with SFTP for Amazon S3. Configure integrated Active Directory authentication.
+B. Set up AWS Database Migration Service (AWS DMS) to synchronize the on-premises client with Amazon S3. Configure integrated Active Directory authentication.
+C. Set up AWS DataSync to synchronize between the on-premises location and the S3 location by using AWS IAM Identity Center (AWS Single Sign-On).
+D. Set up a Windows Amazon EC2 instance with SFTP to connect the on-premises client with Amazon S3. Integrate AWS Identity and Access Management (IAM).
+
+335)
+A company is experiencing sudden increases in demand. The company needs to provision large Amazon EC2 instances from an Amazon Machine Image (AMI). The instances will run in an Auto Scaling group. The company needs a solution that provides minimum initialization latency to meet the demand.
+
+Which solution meets these requirements?
+
+A. Use the aws ec2 register-image command to create an AMI from a snapshot. Use AWS Step Functions to replace the AMI in the Auto Scaling group.
+B. Enable Amazon Elastic Block Store (Amazon EBS) fast snapshot restore on a snapshot. Provision an AMI by using the snapshot. Replace the AMI in the Auto Scaling group with the new AMI.
+C. Enable AMI creation and define lifecycle rules in Amazon Data Lifecycle Manager (Amazon DLM). Create an AWS Lambda function that modifies the AMI in the Auto Scaling group.
+D. Use Amazon EventBridge to invoke AWS Backup lifecycle policies that provision AMIs. Configure Auto Scaling group capacity limits as an event source in EventBridge.
+
+336)
+A company hosts a multi-tier web application that uses an Amazon Aurora MySQL DB cluster for storage. 
+The application tier is hosted on Amazon EC2 instances. The company’s IT security guidelines mandate that the database credentials be encrypted and rotated every 14 days.
+
+What should a solutions architect do to meet this requirement with the LEAST operational effort?
+
+A. Create a new AWS Key Management Service (AWS KMS) encryption key. Use AWS Secrets Manager to create a new secret that uses the KMS key with the appropriate credentials. 
+Associate the secret with the Aurora DB cluster. Configure a custom rotation period of 14 days.
+B. Create two parameters in AWS Systems Manager Parameter Store: one for the user name as a string parameter and one that uses the SecureString type for the password. 
+Select AWS Key Management Service (AWS KMS) encryption for the password parameter, and load these parameters in the application tier. 
+Implement an AWS Lambda function that rotates the password every 14 days.
+C. Store a file that contains the credentials in an AWS Key Management Service (AWS KMS) encrypted Amazon Elastic File System (Amazon EFS) file system. 
+Mount the EFS file system in all EC2 instances of the application tier. 
+Restrict the access to the file on the file system so that the application can read the file and that only super users can modify the file. 
+Implement an AWS Lambda function that rotates the key in Aurora every 14 days and writes new credentials into the file.
+D. Store a file that contains the credentials in an AWS Key Management Service (AWS KMS) encrypted Amazon S3 bucket that the application uses to load the credentials.
+Download the file to the application regularly to ensure that the correct credentials are used. 
+Implement an AWS Lambda function that rotates the Aurora credentials every 14 days and uploads these credentials to the file in the S3 bucket.
+
+337)
+A company has deployed a web application on AWS. 
+The company hosts the backend database on Amazon RDS for MySQL with a primary DB instance and five read replicas to support scaling needs. 
+The read replicas must lag no more than 1 second behind the primary DB instance. The database routinely runs scheduled stored procedures.
+
+As traffic on the website increases, the replicas experience additional lag during periods of peak load. 
+A solutions architect must reduce the replication lag as much as possible. 
+The solutions architect must minimize changes to the application code and must minimize ongoing operational overhead.
+
+Which solution will meet these requirements?
+
+A. Migrate the database to Amazon Aurora MySQL. Replace the read replicas with Aurora Replicas, and configure Aurora Auto Scaling. 
+Replace the stored procedures with Aurora MySQL native functions.
+B. Deploy an Amazon ElastiCache for Redis cluster in front of the database. 
+Modify the application to check the cache before the application queries the database. Replace the stored procedures with AWS Lambda functions.
+C. Migrate the database to a MySQL database that runs on Amazon EC2 instances. 
+Choose large, compute optimized EC2 instances for all replica nodes. Maintain the stored procedures on the EC2 instances.
+D. Migrate the database to Amazon DynamoDB. Provision a large number of read capacity units (RCUs) to support the required throughput, and configure on-demand capacity scaling. 
+Replace the stored procedures with DynamoDB streams.
+
+338)
+A solutions architect must create a disaster recovery (DR) plan for a high-volume software as a service (SaaS) platform. 
+All data for the platform is stored in an Amazon Aurora MySQL DB cluster.
+
+The DR plan must replicate data to a secondary AWS Region.
+
+Which solution will meet these requirements MOST cost-effectively?
+
+A. Use MySQL binary log replication to an Aurora cluster in the secondary Region. Provision one DB instance for the Aurora cluster in the secondary Region.
+B. Set up an Aurora global database for the DB cluster. When setup is complete, remove the DB instance from the secondary Region.
+C. Use AWS Database Migration Service (AWS DMS) to continuously replicate data to an Aurora cluster in the secondary Region. Remove the DB instance from the secondary Region.
+D. Set up an Aurora global database for the DB cluster. Specify a minimum of one DB instance in the secondary Region.
+
+339)
+A company has a custom application with embedded credentials that retrieves information from an Amazon RDS MySQL DB instance. 
+Management says the application must be made more secure with the least amount of programming effort.
+
+What should a solutions architect do to meet these requirements?
+
+A. Use AWS Key Management Service (AWS KMS) to create keys. Configure the application to load the database credentials from AWS KMS. Enable automatic key rotation.
+B. Create credentials on the RDS for MySQL database for the application user and store the credentials in AWS Secrets Manager. 
+Configure the application to load the database credentials from Secrets Manager. Create an AWS Lambda function that rotates the credentials in Secret Manager.
+C. Create credentials on the RDS for MySQL database for the application user and store the credentials in AWS Secrets Manager. 
+Configure the application to load the database credentials from Secrets Manager. 
+Set up a credentials rotation schedule for the application user in the RDS for MySQL database using Secrets Manager.
+D. Create credentials on the RDS for MySQL database for the application user and store the credentials in AWS Systems Manager Parameter Store. 
+Configure the application to load the database credentials from Parameter Store. 
+Set up a credentials rotation schedule for the application user in the RDS for MySQL database using Parameter Store.
+
+340)
+A media company hosts its website on AWS. The website application’s architecture includes a fleet of Amazon EC2 instances behind an Application Load Balancer (ALB) 
+and a database that is hosted on Amazon Aurora. The company’s cybersecurity team reports that the application is vulnerable to SQL injection.
+
+How should the company resolve this issue?
+
+A. Use AWS WAF in front of the ALB. Associate the appropriate web ACLs with AWS WAF.
+B. Create an ALB listener rule to reply to SQL injections with a fixed response.
+C. Subscribe to AWS Shield Advanced to block all SQL injection attempts automatically.
+D. Set up Amazon Inspector to block all SQL injection attempts automatically.
+
+
+
 
 
 
