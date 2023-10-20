@@ -524,24 +524,108 @@ C. Create a read replica of the DB instance in a different Availability Zone. Po
 D. Migrate the database to RDS Custom.
 E. Use RDS Proxy to limit reporting requests to the maintenance window.
 
+351)
+A company is moving its data management application to AWS. The company wants to transition to an event-driven architecture. The architecture needs to be more distributed and to use serverless concepts while performing the different aspects of the workflow. The company also wants to minimize operational overhead.
 
+Which solution will meet these requirements?
 
+A. Build out the workflow in AWS Glue. Use AWS Glue to invoke AWS Lambda functions to process the workflow steps.
+B. Build out the workflow in AWS Step Functions. Deploy the application on Amazon EC2 instances. Use Step Functions to invoke the workflow steps on the EC2 instances.
+C. Build out the workflow in Amazon EventBridge. Use EventBridge to invoke AWS Lambda functions on a schedule to process the workflow steps.
+D. Build out the workflow in AWS Step Functions. Use Step Functions to create a state machine. Use the state machine to invoke AWS Lambda functions to process the workflow steps.
 
+352)
+A company is designing the network for an online multi-player game. The game uses the UDP networking protocol and will be deployed in eight AWS Regions. The network architecture needs to minimize latency and packet loss to give end users a high-quality gaming experience.
 
+Which solution will meet these requirements?
 
+A. Setup a transit gateway in each Region. Create inter-Region peering attachments between each transit gateway.
+B. Set up AWS Global Accelerator with UDP listeners and endpoint groups in each Region.
+C. Set up Amazon CloudFront with UDP turned on. Configure an origin in each Region.
+D. Set up a VPC peering mesh between each Region. Turn on UDP for each VPC.
 
+353)
+A company hosts a three-tier web application on Amazon EC2 instances in a single Availability Zone. The web application uses a self-managed MySQL database that is hosted on an EC2 instance to store data in an Amazon Elastic Block Store (Amazon EBS) volume. The MySQL database currently uses a 1 TB Provisioned IOPS SSD (io2) EBS volume. The company expects traffic of 1,000 IOPS for both reads and writes at peak traffic.
 
+The company wants to minimize any disruptions, stabilize performance, and reduce costs while retaining the capacity for double the IOPS. The company wants to move the database tier to a fully managed solution that is highly available and fault tolerant.
 
+Which solution will meet these requirements MOST cost-effectively?
 
+A. Use a Multi-AZ deployment of an Amazon RDS for MySQL DB instance with an io2 Block Express EBS volume.
+B. Use a Multi-AZ deployment of an Amazon RDS for MySQL DB instance with a General Purpose SSD (gp2) EBS volume.
+C. Use Amazon S3 Intelligent-Tiering access tiers.
+D. Use two large EC2 instances to host the database in active-passive mode.
 
+354)
+A company hosts a serverless application on AWS. The application uses Amazon API Gateway, AWS Lambda, and an Amazon RDS for PostgreSQL database. The company notices an increase in application errors that result from database connection timeouts during times of peak traffic or unpredictable traffic. The company needs a solution that reduces the application failures with the least amount of change to the code.
 
+What should a solutions architect do to meet these requirements?
 
+A. Reduce the Lambda concurrency rate.
+B. Enable RDS Proxy on the RDS DB instance.
+C. Resize the RDS DB instance class to accept more connections.
+D. Migrate the database to Amazon DynamoDB with on-demand scaling.
 
+355)
+A company is migrating an old application to AWS. The application runs a batch job every hour and is CPU intensive. The batch job takes 15 minutes on average with an on-premises server. The server has 64 virtual CPU (vCPU) and 512 GiB of memory.
 
+Which solution will run the batch job within 15 minutes with the LEAST operational overhead?
 
+A. Use AWS Lambda with functional scaling.
+B. Use Amazon Elastic Container Service (Amazon ECS) with AWS Fargate.
+C. Use Amazon Lightsail with AWS Auto Scaling.
+D. Use AWS Batch on Amazon EC2.
 
+356)
+A company stores its data objects in Amazon S3 Standard storage. A solutions architect has found that 75% of the data is rarely accessed after 30 days. The company needs all the data to remain immediately accessible with the same high availability and resiliency, but the company wants to minimize storage costs.
 
+Which storage solution will meet these requirements?
 
+A. Move the data objects to S3 Glacier Deep Archive after 30 days.
+B. Move the data objects to S3 Standard-Infrequent Access (S3 Standard-IA) after 30 days.
+C. Move the data objects to S3 One Zone-Infrequent Access (S3 One Zone-IA) after 30 days.
+D. Move the data objects to S3 One Zone-Infrequent Access (S3 One Zone-IA) immediately.
+
+357)
+A gaming company is moving its public scoreboard from a data center to the AWS Cloud. The company uses Amazon EC2 Windows Server instances behind an Application Load Balancer to host its dynamic application. The company needs a highly available storage solution for the application. The application consists of static files and dynamic server-side code.
+
+Which combination of steps should a solutions architect take to meet these requirements? (Choose two.)
+
+A. Store the static files on Amazon S3. Use Amazon CloudFront to cache objects at the edge.
+B. Store the static files on Amazon S3. Use Amazon ElastiCache to cache objects at the edge.
+C. Store the server-side code on Amazon Elastic File System (Amazon EFS). Mount the EFS volume on each EC2 instance to share the files.
+D. Store the server-side code on Amazon FSx for Windows File Server. Mount the FSx for Windows File Server volume on each EC2 instance to share the files.
+E. Store the server-side code on a General Purpose SSD (gp2) Amazon Elastic Block Store (Amazon EBS) volume. Mount the EBS volume on each EC2 instance to share the files.
+
+358)
+A social media company runs its application on Amazon EC2 instances behind an Application Load Balancer (ALB). The ALB is the origin for an Amazon CloudFront distribution. The application has more than a billion images stored in an Amazon S3 bucket and processes thousands of images each second. The company wants to resize the images dynamically and serve appropriate formats to clients.
+
+Which solution will meet these requirements with the LEAST operational overhead?
+
+A. Install an external image management library on an EC2 instance. Use the image management library to process the images.
+B. Create a CloudFront origin request policy. Use the policy to automatically resize images and to serve the appropriate format based on the User-Agent HTTP header in the request.
+C. Use a Lambda@Edge function with an external image management library. Associate the Lambda@Edge function with the CloudFront behaviors that serve the images.
+D. Create a CloudFront response headers policy. Use the policy to automatically resize images and to serve the appropriate format based on the User-Agent HTTP header in the request.
+
+359)
+A hospital needs to store patient records in an Amazon S3 bucket. The hospital’s compliance team must ensure that all protected health information (PHI) is encrypted in transit and at rest. The compliance team must administer the encryption key for data at rest.
+
+Which solution will meet these requirements?
+
+A. Create a public SSL/TLS certificate in AWS Certificate Manager (ACM). Associate the certificate with Amazon S3. Configure default encryption for each S3 bucket to use server-side encryption with AWS KMS keys (SSE-KMS). Assign the compliance team to manage the KMS keys.
+B. Use the aws:SecureTransport condition on S3 bucket policies to allow only encrypted connections over HTTPS (TLS). Configure default encryption for each S3 bucket to use server-side encryption with S3 managed encryption keys (SSE-S3). Assign the compliance team to manage the SSE-S3 keys.
+C. Use the aws:SecureTransport condition on S3 bucket policies to allow only encrypted connections over HTTPS (TLS). Configure default encryption for each S3 bucket to use server-side encryption with AWS KMS keys (SSE-KMS). Assign the compliance team to manage the KMS keys.
+D. Use the aws:SecureTransport condition on S3 bucket policies to allow only encrypted connections over HTTPS (TLS). Use Amazon Macie to protect the sensitive data that is stored in Amazon S3. Assign the compliance team to manage Macie.
+
+360)
+A company uses Amazon API Gateway to run a private gateway with two REST APIs in the same VPC. The BuyStock RESTful web service calls the CheckFunds RESTful web service to ensure that enough funds are available before a stock can be purchased. The company has noticed in the VPC flow logs that the BuyStock RESTful web service calls the CheckFunds RESTful web service over the internet instead of through the VPC. A solutions architect must implement a solution so that the APIs communicate through the VPC.
+
+Which solution will meet these requirements with the FEWEST changes to the code?
+
+A. Add an X-API-Key header in the HTTP header for authorization.
+B. Use an interface endpoint.
+C. Use a gateway endpoint.
+D. Add an Amazon Simple Queue Service (Amazon SQS) queue between the two REST APIs.
 
 
 
