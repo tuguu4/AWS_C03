@@ -627,21 +627,120 @@ B. Use an interface endpoint.
 C. Use a gateway endpoint.
 D. Add an Amazon Simple Queue Service (Amazon SQS) queue between the two REST APIs.
 
+361)
+A company hosts a multiplayer gaming application on AWS. The company wants the application to read data with sub-millisecond latency and run one-time queries on historical data.
 
+Which solution will meet these requirements with the LEAST operational overhead?
 
+A. Use Amazon RDS for data that is frequently accessed. Run a periodic custom script to export the data to an Amazon S3 bucket.
+B. Store the data directly in an Amazon S3 bucket. Implement an S3 Lifecycle policy to move older data to S3 Glacier Deep Archive for long-term storage. Run one-time queries on the data in Amazon S3 by using Amazon Athena.
+C. Use Amazon DynamoDB with DynamoDB Accelerator (DAX) for data that is frequently accessed. Export the data to an Amazon S3 bucket by using DynamoDB table export. Run one-time queries on the data in Amazon S3 by using Amazon Athena.
+D. Use Amazon DynamoDB for data that is frequently accessed. Turn on streaming to Amazon Kinesis Data Streams. Use Amazon Kinesis Data Firehose to read the data from Kinesis Data Streams. Store the records in an Amazon S3 bucket.
 
+362)
+A company uses a payment processing system that requires messages for a particular payment ID to be received in the same order that they were sent. Otherwise, the payments might be processed incorrectly.
 
+Which actions should a solutions architect take to meet this requirement? (Choose two.)
 
+A. Write the messages to an Amazon DynamoDB table with the payment ID as the partition key.
+B. Write the messages to an Amazon Kinesis data stream with the payment ID as the partition key.
+C. Write the messages to an Amazon ElastiCache for Memcached cluster with the payment ID as the key.
+D. Write the messages to an Amazon Simple Queue Service (Amazon SQS) queue. Set the message attribute to use the payment ID.
+E. Write the messages to an Amazon Simple Queue Service (Amazon SQS) FIFO queue. Set the message group to use the payment ID.
 
+363)
+A company is building a game system that needs to send unique events to separate leaderboard, matchmaking, and authentication services concurrently. The company needs an AWS event-driven system that guarantees the order of the events.
 
+Which solution will meet these requirements?
 
+A. Amazon EventBridge event bus
+B. Amazon Simple Notification Service (Amazon SNS) FIFO topics
+C. Amazon Simple Notification Service (Amazon SNS) standard topics
+D. Amazon Simple Queue Service (Amazon SQS) FIFO queues
 
+364)
+A hospital is designing a new application that gathers symptoms from patients. The hospital has decided to use Amazon Simple Queue Service (Amazon SQS) and Amazon Simple Notification Service (Amazon SNS) in the architecture.
 
+A solutions architect is reviewing the infrastructure design. Data must be encrypted at rest and in transit. Only authorized personnel of the hospital should be able to access the data.
 
+Which combination of steps should the solutions architect take to meet these requirements? (Choose two.)
 
+A. Turn on server-side encryption on the SQS components. Update the default key policy to restrict key usage to a set of authorized principals.
+B. Turn on server-side encryption on the SNS components by using an AWS Key Management Service (AWS KMS) customer managed key. Apply a key policy to restrict key usage to a set of authorized principals.
+C. Turn on encryption on the SNS components. Update the default key policy to restrict key usage to a set of authorized principals. Set a condition in the topic policy to allow only encrypted connections over TLS.
+D. Turn on server-side encryption on the SQS components by using an AWS Key Management Service (AWS KMS) customer managed key. Apply a key policy to restrict key usage to a set of authorized principals. Set a condition in the queue policy to allow only encrypted connections over TLS.
+E. Turn on server-side encryption on the SQS components by using an AWS Key Management Service (AWS KMS) customer managed key. Apply an IAM policy to restrict key usage to a set of authorized principals. Set a condition in the queue policy to allow only encrypted connections over TLS.
 
+365)
+A company runs a web application that is backed by Amazon RDS. A new database administrator caused data loss by accidentally editing information in a database table. To help recover from this type of incident, the company wants the ability to restore the database to its state from 5 minutes before any change within the last 30 days.
 
+Which feature should the solutions architect include in the design to meet this requirement?
 
+A. Read replicas
+B. Manual snapshots
+C. Automated backups
+D. Multi-AZ deployments
+
+366)
+A company’s web application consists of an Amazon API Gateway API in front of an AWS Lambda function and an Amazon DynamoDB database. The Lambda function handles the business logic, and the DynamoDB table hosts the data. The application uses Amazon Cognito user pools to identify the individual users of the application. A solutions architect needs to update the application so that only users who have a subscription can access premium content.
+
+Which solution will meet this requirement with the LEAST operational overhead?
+
+A. Enable API caching and throttling on the API Gateway API.
+B. Set up AWS WAF on the API Gateway API. Create a rule to filter users who have a subscription.
+C. Apply fine-grained IAM permissions to the premium content in the DynamoDB table.
+D. Implement API usage plans and API keys to limit the access of users who do not have a subscription.
+
+367)
+A company is using Amazon Route 53 latency-based routing to route requests to its UDP-based application for users around the world. The application is hosted on redundant servers in the company's on-premises data centers in the United States, Asia, and Europe. The company’s compliance requirements state that the application must be hosted on premises. The company wants to improve the performance and availability of the application.
+
+What should a solutions architect do to meet these requirements?
+
+A. Configure three Network Load Balancers (NLBs) in the three AWS Regions to address the on-premises endpoints. Create an accelerator by using AWS Global Accelerator, and register the NLBs as its endpoints. Provide access to the application by using a CNAME that points to the accelerator DNS.
+B. Configure three Application Load Balancers (ALBs) in the three AWS Regions to address the on-premises endpoints. Create an accelerator by using AWS Global Accelerator, and register the ALBs as its endpoints. Provide access to the application by using a CNAME that points to the accelerator DNS.
+C. Configure three Network Load Balancers (NLBs) in the three AWS Regions to address the on-premises endpoints. In Route 53, create a latency-based record that points to the three NLBs, and use it as an origin for an Amazon CloudFront distribution. Provide access to the application by using a CNAME that points to the CloudFront DNS.
+D. Configure three Application Load Balancers (ALBs) in the three AWS Regions to address the on-premises endpoints. In Route 53, create a latency-based record that points to the three ALBs, and use it as an origin for an Amazon CloudFront distribution. Provide access to the application by using a CNAME that points to the CloudFront DNS.
+
+368)
+A solutions architect wants all new users to have specific complexity requirements and mandatory rotation periods for IAM user passwords.
+
+What should the solutions architect do to accomplish this?
+
+A. Set an overall password policy for the entire AWS account.
+B. Set a password policy for each IAM user in the AWS account.
+C. Use third-party vendor software to set password requirements.
+D. Attach an Amazon CloudWatch rule to the Create_newuser event to set the password with the appropriate requirements.
+
+369)
+A company has migrated an application to Amazon EC2 Linux instances. One of these EC2 instances runs several 1-hour tasks on a schedule. These tasks were written by different teams and have no common programming language. The company is concerned about performance and scalability while these tasks run on a single instance. A solutions architect needs to implement a solution to resolve these concerns.
+
+Which solution will meet these requirements with the LEAST operational overhead?
+
+A. Use AWS Batch to run the tasks as jobs. Schedule the jobs by using Amazon EventBridge (Amazon CloudWatch Events).
+B. Convert the EC2 instance to a container. Use AWS App Runner to create the container on demand to run the tasks as jobs.
+C. Copy the tasks into AWS Lambda functions. Schedule the Lambda functions by using Amazon EventBridge (Amazon CloudWatch Events).
+D. Create an Amazon Machine Image (AMI) of the EC2 instance that runs the tasks. Create an Auto Scaling group with the AMI to run multiple copies of the instance.
+
+370)
+A company runs a public three-tier web application in a VPC. The application runs on Amazon EC2 instances across multiple Availability Zones. The EC2 instances that run in private subnets need to communicate with a license server over the internet. The company needs a managed solution that minimizes operational maintenance.
+
+Which solution meets these requirements?
+
+A. Provision a NAT instance in a public subnet. Modify each private subnet's route table with a default route that points to the NAT instance.
+B. Provision a NAT instance in a private subnet. Modify each private subnet's route table with a default route that points to the NAT instance.
+C. Provision a NAT gateway in a public subnet. Modify each private subnet's route table with a default route that points to the NAT gateway.
+D. Provision a NAT gateway in a private subnet. Modify each private subnet's route table with a default route that points to the NAT gateway.
+
+371)
+A company needs to create an Amazon Elastic Kubernetes Service (Amazon EKS) cluster to host a digital media streaming application. The EKS cluster will use a managed node group that is backed by Amazon Elastic Block Store (Amazon EBS) volumes for storage. The company must encrypt all data at rest by using a customer managed key that is stored in AWS Key Management Service (AWS KMS).
+
+Which combination of actions will meet this requirement with the LEAST operational overhead? (Choose two.)
+
+A. Use a Kubernetes plugin that uses the customer managed key to perform data encryption.
+B. After creation of the EKS cluster, locate the EBS volumes. Enable encryption by using the customer managed key.
+C. Enable EBS encryption by default in the AWS Region where the EKS cluster will be created. Select the customer managed key as the default key.
+D. Create the EKS cluster. Create an IAM role that has a policy that grants permission to the customer managed key. Associate the role with the EKS cluster.
+E. Store the customer managed key as a Kubernetes secret in the EKS cluster. Use the customer managed key to encrypt the EBS volumes.
 
 
 
