@@ -1061,8 +1061,111 @@ B. Have the current application publish a message to four Amazon Simple Notifica
 C. Enable Amazon DynamoDB Streams on the table. Use triggers to write to a single Amazon Simple Notification Service (Amazon SNS) topic to which the teams can subscribe.
 D. Add a custom attribute to each record to flag new items. Write a cron job that scans the table every minute for items that are new and notifies an Amazon Simple Queue Service (Amazon SQS) queue to which the teams can subscribe.
 
+401)
+A company wants to use the AWS Cloud to make an existing application highly available and resilient. The current version of the application resides in the company's data center. The application recently experienced data loss after a database server crashed because of an unexpected power outage.
 
+The company needs a solution that avoids any single points of failure. The solution must give the application the ability to scale to meet user demand.
 
+Which solution will meet these requirements?
+
+A. Deploy the application servers by using Amazon EC2 instances in an Auto Scaling group across multiple Availability Zones. Use an Amazon RDS DB instance in a Multi-AZ configuration.
+B. Deploy the application servers by using Amazon EC2 instances in an Auto Scaling group in a single Availability Zone. Deploy the database on an EC2 instance. Enable EC2 Auto Recovery.
+C. Deploy the application servers by using Amazon EC2 instances in an Auto Scaling group across multiple Availability Zones. Use an Amazon RDS DB instance with a read replica in a single Availability Zone. Promote the read replica to replace the primary DB instance if the primary DB instance fails.
+D. Deploy the application servers by using Amazon EC2 instances in an Auto Scaling group across multiple Availability Zones. Deploy the primary and secondary database servers on EC2 instances across multiple Availability Zones. Use Amazon Elastic Block Store (Amazon EBS) Multi-Attach to create shared storage between the instances.
+
+402)
+A company needs to ingest and handle large amounts of streaming data that its application generates. The application runs on Amazon EC2 instances and sends data to Amazon Kinesis Data Streams, which is configured with default settings. Every other day, the application consumes the data and writes the data to an Amazon S3 bucket for business intelligence (BI) processing. The company observes that Amazon S3 is not receiving all the data that the application sends to Kinesis Data Streams.
+
+What should a solutions architect do to resolve this issue?
+
+A. Update the Kinesis Data Streams default settings by modifying the data retention period.
+B. Update the application to use the Kinesis Producer Library (KPL) to send the data to Kinesis Data Streams.
+C. Update the number of Kinesis shards to handle the throughput of the data that is sent to Kinesis Data Streams.
+D. Turn on S3 Versioning within the S3 bucket to preserve every version of every object that is ingested in the S3 bucket.
+
+403)
+A developer has an application that uses an AWS Lambda function to upload files to Amazon S3 and needs the required permissions to perform the task. The developer already has an IAM user with valid IAM credentials required for Amazon S3.
+
+What should a solutions architect do to grant the permissions?
+
+A. Add required IAM permissions in the resource policy of the Lambda function.
+B. Create a signed request using the existing IAM credentials in the Lambda function.
+C. Create a new IAM user and use the existing IAM credentials in the Lambda function.
+D. Create an IAM execution role with the required permissions and attach the IAM role to the Lambda function.
+
+404)
+A company has deployed a serverless application that invokes an AWS Lambda function when new documents are uploaded to an Amazon S3 bucket. The application uses the Lambda function to process the documents. After a recent marketing campaign, the company noticed that the application did not process many of the documents.
+
+What should a solutions architect do to improve the architecture of this application?
+
+A. Set the Lambda function's runtime timeout value to 15 minutes.
+B. Configure an S3 bucket replication policy. Stage the documents in the S3 bucket for later processing.
+C. Deploy an additional Lambda function. Load balance the processing of the documents across the two Lambda functions.
+D. Create an Amazon Simple Queue Service (Amazon SQS) queue. Send the requests to the queue. Configure the queue as an event source for Lambda.
+
+405)
+A solutions architect is designing the architecture for a software demonstration environment. The environment will run on Amazon EC2 instances in an Auto Scaling group behind an Application Load Balancer (ALB). The system will experience significant increases in traffic during working hours but is not required to operate on weekends.
+
+Which combination of actions should the solutions architect take to ensure that the system can scale to meet demand? (Choose two.)
+
+A. Use AWS Auto Scaling to adjust the ALB capacity based on request rate.
+B. Use AWS Auto Scaling to scale the capacity of the VPC internet gateway.
+C. Launch the EC2 instances in multiple AWS Regions to distribute the load across Regions.
+D. Use a target tracking scaling policy to scale the Auto Scaling group based on instance CPU utilization.
+E. Use scheduled scaling to change the Auto Scaling group minimum, maximum, and desired capacity to zero for weekends. Revert to the default values at the start of the week.
+
+406)
+A solutions architect is designing a two-tiered architecture that includes a public subnet and a database subnet. The web servers in the public subnet must be open to the internet on port 443. The Amazon RDS for MySQL DB instance in the database subnet must be accessible only to the web servers on port 3306.
+
+Which combination of steps should the solutions architect take to meet these requirements? (Choose two.)
+
+A. Create a network ACL for the public subnet. Add a rule to deny outbound traffic to 0.0.0.0/0 on port 3306.
+B. Create a security group for the DB instance. Add a rule to allow traffic from the public subnet CIDR block on port 3306.
+C. Create a security group for the web servers in the public subnet. Add a rule to allow traffic from 0.0.0.0/0 on port 443.
+D. Create a security group for the DB instance. Add a rule to allow traffic from the web servers’ security group on port 3306.
+E. Create a security group for the DB instance. Add a rule to deny all traffic except traffic from the web servers’ security group on port 3306.
+
+407)
+A company is implementing a shared storage solution for a gaming application that is hosted in the AWS Cloud. The company needs the ability to use Lustre clients to access data. The solution must be fully managed.
+
+Which solution meets these requirements?
+
+A. Create an AWS DataSync task that shares the data as a mountable file system. Mount the file system to the application server.
+B. Create an AWS Storage Gateway file gateway. Create a file share that uses the required client protocol. Connect the application server to the file share.
+C. Create an Amazon Elastic File System (Amazon EFS) file system, and configure it to support Lustre. Attach the file system to the origin server. Connect the application server to the file system.
+D. Create an Amazon FSx for Lustre file system. Attach the file system to the origin server. Connect the application server to the file system.
+
+408)
+A company runs an application that receives data from thousands of geographically dispersed remote devices that use UDP. The application processes the data immediately and sends a message back to the device if necessary. No data is stored.
+
+The company needs a solution that minimizes latency for the data transmission from the devices. The solution also must provide rapid failover to another AWS Region.
+
+Which solution will meet these requirements?
+
+A. Configure an Amazon Route 53 failover routing policy. Create a Network Load Balancer (NLB) in each of the two Regions. Configure the NLB to invoke an AWS Lambda function to process the data.
+B. Use AWS Global Accelerator. Create a Network Load Balancer (NLB) in each of the two Regions as an endpoint. Create an Amazon Elastic Container Service (Amazon ECS) cluster with the Fargate launch type. Create an ECS service on the cluster. Set the ECS service as the target for the NLProcess the data in Amazon ECS.
+C. Use AWS Global Accelerator. Create an Application Load Balancer (ALB) in each of the two Regions as an endpoint. Create an Amazon Elastic Container Service (Amazon ECS) cluster with the Fargate launch type. Create an ECS service on the cluster. Set the ECS service as the target for the ALB. Process the data in Amazon ECS.
+D. Configure an Amazon Route 53 failover routing policy. Create an Application Load Balancer (ALB) in each of the two Regions. Create an Amazon Elastic Container Service (Amazon ECS) cluster with the Fargate launch type. Create an ECS service on the cluster. Set the ECS service as the target for the ALB. Process the data in Amazon ECS.
+
+409)
+A solutions architect must migrate a Windows Internet Information Services (IIS) web application to AWS. The application currently relies on a file share hosted in the user's on-premises network-attached storage (NAS). The solutions architect has proposed migrating the IIS web servers to Amazon EC2 instances in multiple Availability Zones that are connected to the storage solution, and configuring an Elastic Load Balancer attached to the instances.
+
+Which replacement to the on-premises file share is MOST resilient and durable?
+
+A. Migrate the file share to Amazon RDS.
+B. Migrate the file share to AWS Storage Gateway.
+C. Migrate the file share to Amazon FSx for Windows File Server.
+D. Migrate the file share to Amazon Elastic File System (Amazon EFS).
+
+410)
+A company is deploying a new application on Amazon EC2 instances. The application writes data to Amazon Elastic Block Store (Amazon EBS) volumes. The company needs to ensure that all data that is written to the EBS volumes is encrypted at rest.
+
+Which solution will meet this requirement?
+
+A. Create an IAM role that specifies EBS encryption. Attach the role to the EC2 instances.
+B. Create the EBS volumes as encrypted volumes. Attach the EBS volumes to the EC2 instances.
+C. Create an EC2 instance tag that has a key of Encrypt and a value of True. Tag all instances that require encryption at the EBS level.
+D. Create an AWS Key Management Service (AWS KMS) key policy that enforces EBS encryption in the account. Ensure that the key policy is active.
 
 
 
