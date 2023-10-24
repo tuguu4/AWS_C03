@@ -1805,6 +1805,120 @@ B. Create an internet gateway and make it the destination of the subnet's route 
 C. Create a virtual private gateway and make it the destination of the subnet's route table
 D. Create an egress-only internet gateway and make it the destination of the subnet's route table
 
+471)
+A company is creating an application that runs on containers in a VPC. The application stores and accesses data in an Amazon S3 bucket. During the development phase, the application will store and access 1 TB of data in Amazon S3 each day. The company wants to minimize costs and wants to prevent traffic from traversing the internet whenever possible.
+
+Which solution will meet these requirements?
+
+A. Enable S3 Intelligent-Tiering for the S3 bucket
+B. Enable S3 Transfer Acceleration for the S3 bucket
+C. Create a gateway VPC endpoint for Amazon S3. Associate this endpoint with all route tables in the VPC
+D. Create an interface endpoint for Amazon S3 in the VPC. Associate this endpoint with all route tables in the VPC
+
+472)
+A company has a mobile chat application with a data store based in Amazon DynamoDB. Users would like new messages to be read with as little latency as possible. A solutions architect needs to design an optimal solution that requires minimal application changes.
+
+Which method should the solutions architect select?
+
+A. Configure Amazon DynamoDB Accelerator (DAX) for the new messages table. Update the code to use the DAX endpoint.
+B. Add DynamoDB read replicas to handle the increased read load. Update the application to point to the read endpoint for the read replicas.
+C. Double the number of read capacity units for the new messages table in DynamoDB. Continue to use the existing DynamoDB endpoint.
+D. Add an Amazon ElastiCache for Redis cache to the application stack. Update the application to point to the Redis cache endpoint instead of DynamoDB.
+
+473)
+A company hosts a website on Amazon EC2 instances behind an Application Load Balancer (ALB). The website serves static content. Website traffic is increasing, and the company is concerned about a potential increase in cost.
+
+A. Create an Amazon CloudFront distribution to cache state files at edge locations
+B. Create an Amazon ElastiCache cluster. Connect the ALB to the ElastiCache cluster to serve cached files
+C. Create an AWS WAF web ACL and associate it with the ALB. Add a rule to the web ACL to cache static files
+D. Create a second ALB in an alternative AWS Region. Route user traffic to the closest Region to minimize data transfer costs
+
+474)
+A company has multiple VPCs across AWS Regions to support and run workloads that are isolated from workloads in other Regions. Because of a recent application launch requirement, the company’s VPCs must communicate with all other VPCs across all Regions.
+
+Which solution will meet these requirements with the LEAST amount of administrative effort?
+
+A. Use VPC peering to manage VPC communication in a single Region. Use VPC peering across Regions to manage VPC communications.
+B. Use AWS Direct Connect gateways across all Regions to connect VPCs across regions and manage VPC communications.
+C. Use AWS Transit Gateway to manage VPC communication in a single Region and Transit Gateway peering across Regions to manage VPC communications.
+D. Use AWS PrivateLink across all Regions to connect VPCs across Regions and manage VPC communications
+
+475)
+A company is designing a containerized application that will use Amazon Elastic Container Service (Amazon ECS). The application needs to access a shared file system that is highly durable and can recover data to another AWS Region with a recovery point objective (RPO) of 8 hours. The file system needs to provide a mount target m each Availability Zone within a Region.
+
+A solutions architect wants to use AWS Backup to manage the replication to another Region.
+
+Which solution will meet these requirements?
+
+A. Amazon FSx for Windows File Server with a Multi-AZ deployment
+B. Amazon FSx for NetApp ONTAP with a Multi-AZ deployment
+C. Amazon Elastic File System (Amazon EFS) with the Standard storage class
+D. Amazon FSx for OpenZFS
+
+476)
+A company is expecting rapid growth in the near future. A solutions architect needs to configure existing users and grant permissions to new users on AWS. The solutions architect has decided to create IAM groups. The solutions architect will add the new users to IAM groups based on department.
+
+Which additional action is the MOST secure way to grant permissions to the new users?
+
+A. Apply service control policies (SCPs) to manage access permissions
+B. Create IAM roles that have least privilege permission. Attach the roles to the IAM groups
+C. Create an IAM policy that grants least privilege permission. Attach the policy to the IAM groups
+D. Create IAM roles. Associate the roles with a permissions boundary that defines the maximum permissions
+
+477)
+A group requires permissions to list an Amazon S3 bucket and delete objects from that bucket. An administrator has created the following IAM policy to provide access to the bucket and applied that policy to the group. The group is not able to delete objects in the bucket. The company follows least-privilege access rules.
+
+Which statement should a solutions architect add to the policy to correct bucket access?
+
+478)
+A law firm needs to share information with the public. The information includes hundreds of files that must be publicly readable. Modifications or deletions of the files by anyone before a designated future date are prohibited.
+
+Which solution will meet these requirements in the MOST secure way?
+
+A. Upload all files to an Amazon S3 bucket that is configured for static website hosting. Grant read-only IAM permissions to any AWS principals that access the S3 bucket until the designated date.
+B. Create a new Amazon S3 bucket with S3 Versioning enabled. Use S3 Object Lock with a retention period in accordance with the designated date. Configure the S3 bucket for static website hosting. Set an S3 bucket policy to allow read-only access to the objects.
+C. Create a new Amazon S3 bucket with S3 Versioning enabled. Configure an event trigger to run an AWS Lambda function in case of object modification or deletion. Configure the Lambda function to replace the objects with the original versions from a private S3 bucket.
+D. Upload all files to an Amazon S3 bucket that is configured for static website hosting. Select the folder that contains the files. Use S3 Object Lock with a retention period in accordance with the designated date. Grant read-only IAM permissions to any AWS principals that access the S3 bucket.
+
+479)
+A company is making a prototype of the infrastructure for its new website by manually provisioning the necessary infrastructure. This infrastructure includes an Auto Scaling group, an Application Load Balancer and an Amazon RDS database. After the configuration has been thoroughly validated, the company wants the capability to immediately deploy the infrastructure for development and production use in two Availability Zones in an automated fashion.
+
+What should a solutions architect recommend to meet these requirements?
+
+A. Use AWS Systems Manager to replicate and provision the prototype infrastructure in two Availability Zones
+B. Define the infrastructure as a template by using the prototype infrastructure as a guide. Deploy the infrastructure with AWS CloudFormation.
+C. Use AWS Config to record the inventory of resources that are used in the prototype infrastructure. Use AWS Config to deploy the prototype infrastructure into two Availability Zones.
+D. Use AWS Elastic Beanstalk and configure it to use an automated reference to the prototype infrastructure to automatically deploy new environments in two Availability Zones.
+
+480)
+A business application is hosted on Amazon EC2 and uses Amazon S3 for encrypted object storage. The chief information security officer has directed that no application traffic between the two services should traverse the public internet.
+
+Which capability should the solutions architect use to meet the compliance requirements?
+
+A. AWS Key Management Service (AWS KMS)
+B. VPC endpoint
+C. Private subnet
+D. Virtual private gateway
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
