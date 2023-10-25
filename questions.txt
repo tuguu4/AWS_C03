@@ -1900,6 +1900,232 @@ B. VPC endpoint
 C. Private subnet
 D. Virtual private gateway
 
+481)
+A company hosts a three-tier web application in the AWS Cloud. A Multi-AZAmazon RDS for MySQL server forms the database layer Amazon ElastiCache forms the cache layer. The company wants a caching strategy that adds or updates data in the cache when a customer adds an item to the database. The data in the cache must always match the data in the database.
+
+Which solution will meet these requirements?
+
+A. Implement the lazy loading caching strategy
+B. Implement the write-through caching strategy
+C. Implement the adding TTL caching strategy
+D. Implement the AWS AppConfig caching strategy
+
+482)
+A company wants to migrate 100 GB of historical data from an on-premises location to an Amazon S3 bucket. The company has a 100 megabits per second (Mbps) internet connection on premises. The company needs to encrypt the data in transit to the S3 bucket. The company will store new data directly in Amazon S3.
+
+Which solution will meet these requirements with the LEAST operational overhead?
+
+A. Use the s3 sync command in the AWS CLI to move the data directly to an S3 bucket
+B. Use AWS DataSync to migrate the data from the on-premises location to an S3 bucket
+C. Use AWS Snowball to move the data to an S3 bucket
+D. Set up an IPsec VPN from the on-premises location to AWS. Use the s3 cp command in the AWS CLI to move the data directly to an S3 bucket
+
+483)
+A company containerized a Windows job that runs on .NET 6 Framework under a Windows container. The company wants to run this job in the AWS Cloud. The job runs every 10 minutes. The job’s runtime varies between 1 minute and 3 minutes.
+
+Which solution will meet these requirements MOST cost-effectively?
+
+A. Create an AWS Lambda function based on the container image of the job. Configure Amazon EventBridge to invoke the function every 10 minutes.
+B. Use AWS Batch to create a job that uses AWS Fargate resources. Configure the job scheduling to run every 10 minutes.
+C. Use Amazon Elastic Container Service (Amazon ECS) on AWS Fargate to run the job. Create a scheduled task based on the container image of the job to run every 10 minutes.
+D. Use Amazon Elastic Container Service (Amazon ECS) on AWS Fargate to run the job. Create a standalone task based on the container image of the job. Use Windows task scheduler to run the job every
+10 minutes.
+
+484)
+A company wants to move from many standalone AWS accounts to a consolidated, multi-account architecture. The company plans to create many new AWS accounts for different business units. The company needs to authenticate access to these AWS accounts by using a centralized corporate directory service.
+
+Which combination of actions should a solutions architect recommend to meet these requirements? (Choose two.)
+
+A. Create a new organization in AWS Organizations with all features turned on. Create the new AWS accounts in the organization.
+B. Set up an Amazon Cognito identity pool. Configure AWS IAM Identity Center (AWS Single Sign-On) to accept Amazon Cognito authentication.
+C. Configure a service control policy (SCP) to manage the AWS accounts. Add AWS IAM Identity Center (AWS Single Sign-On) to AWS Directory Service.
+D. Create a new organization in AWS Organizations. Configure the organization's authentication mechanism to use AWS Directory Service directly.
+E. Set up AWS IAM Identity Center (AWS Single Sign-On) in the organization. Configure IAM Identity Center, and integrate it with the company's corporate directory service.
+
+485)
+A company is looking for a solution that can store video archives in AWS from old news footage. The company needs to minimize costs and will rarely need to restore these files. When the files are needed, they must be available in a maximum of five minutes.
+
+What is the MOST cost-effective solution?
+
+A. Store the video archives in Amazon S3 Glacier and use Expedited retrievals.
+B. Store the video archives in Amazon S3 Glacier and use Standard retrievals.
+C. Store the video archives in Amazon S3 Standard-Infrequent Access (S3 Standard-IA).
+D. Store the video archives in Amazon S3 One Zone-Infrequent Access (S3 One Zone-IA).
+
+486)
+A company is building a three-tier application on AWS. The presentation tier will serve a static website The logic tier is a containerized application. This application will store data in a relational database. The company wants to simplify deployment and to reduce operational costs.
+
+Which solution will meet these requirements?
+
+A. Use Amazon S3 to host static content. Use Amazon Elastic Container Service (Amazon ECS) with AWS Fargate for compute power. Use a managed Amazon RDS cluster for the database.
+B. Use Amazon CloudFront to host static content. Use Amazon Elastic Container Service (Amazon ECS) with Amazon EC2 for compute power. Use a managed Amazon RDS cluster for the database.
+C. Use Amazon S3 to host static content. Use Amazon Elastic Kubernetes Service (Amazon EKS) with AWS Fargate for compute power. Use a managed Amazon RDS cluster for the database.
+D. Use Amazon EC2 Reserved Instances to host static content. Use Amazon Elastic Kubernetes Service (Amazon EKS) with Amazon EC2 for compute power. Use a managed Amazon RDS cluster for the database.
+
+487)
+A company seeks a storage solution for its application. The solution must be highly available and scalable. The solution also must function as a file system be mountable by multiple Linux instances in AWS and on premises through native protocols, and have no minimum size requirements. The company has set up a Site-to-Site VPN for access from its on-premises network to its VPC.
+
+Which storage solution meets these requirements?
+
+A. Amazon FSx Multi-AZ deployments
+B. Amazon Elastic Block Store (Amazon EBS) Multi-Attach volumes
+C. Amazon Elastic File System (Amazon EFS) with multiple mount targets
+D. Amazon Elastic File System (Amazon EFS) with a single mount target and multiple access points
+
+488)
+A 4-year-old media company is using the AWS Organizations all features feature set to organize its AWS accounts. According to the company's finance team, the billing information on the member accounts must not be accessible to anyone, including the root user of the member accounts.
+
+Which solution will meet these requirements?
+
+A. Add all finance team users to an IAM group. Attach an AWS managed policy named Billing to the group.
+B. Attach an identity-based policy to deny access to the billing information to all users, including the root user.
+C. Create a service control policy (SCP) to deny access to the billing information. Attach the SCP to the root organizational unit (OU).
+D. Convert from the Organizations all features feature set to the Organizations consolidated billing feature set.
+
+489)
+An ecommerce company runs an application in the AWS Cloud that is integrated with an on-premises warehouse solution. The company uses Amazon Simple Notification Service (Amazon SNS) to send order messages to an on-premises HTTPS endpoint so the warehouse application can process the orders. The local data center team has detected that some of the order messages were not received.
+
+A solutions architect needs to retain messages that are not delivered and analyze the messages for up to 14 days.
+
+Which solution will meet these requirements with the LEAST development effort?
+
+A. Configure an Amazon SNS dead letter queue that has an Amazon Kinesis Data Stream target with a retention period of 14 days.
+B. Add an Amazon Simple Queue Service (Amazon SQS) queue with a retention period of 14 days between the application and Amazon SNS.
+C. Configure an Amazon SNS dead letter queue that has an Amazon Simple Queue Service (Amazon SQS) target with a retention period of 14 days.
+D. Configure an Amazon SNS dead letter queue that has an Amazon DynamoDB target with a TTL attribute set for a retention period of 14 days.
+
+490)
+A gaming company uses Amazon DynamoDB to store user information such as geographic location, player data, and leaderboards. The company needs to configure continuous backups to an Amazon S3 bucket with a minimal amount of coding. The backups must not affect availability of the application and must not affect the read capacity units (RCUs) that are defined for the table.
+
+Which solution meets these requirements?
+
+A. Use an Amazon EMR cluster. Create an Apache Hive job to back up the data to Amazon S3.
+B. Export the data directly from DynamoDB to Amazon S3 with continuous backups. Turn on point-in-time recovery for the table.
+C. Configure Amazon DynamoDB Streams. Create an AWS Lambda function to consume the stream and export the data to an Amazon S3 bucket.
+D. Create an AWS Lambda function to export the data from the database tables to Amazon S3 on a regular basis. Turn on point-in-time recovery for the table.
+
+491)
+A solutions architect is designing an asynchronous application to process credit card data validation requests for a bank. The application must be secure and be able to process each request at least once.
+
+Which solution will meet these requirements MOST cost-effectively?
+
+A. Use AWS Lambda event source mapping. Set Amazon Simple Queue Service (Amazon SQS) standard queues as the event source. Use AWS Key Management Service (SSE-KMS) for encryption. Add the kms:Decrypt permission for the Lambda execution role.
+B. Use AWS Lambda event source mapping. Use Amazon Simple Queue Service (Amazon SQS) FIFO queues as the event source. Use SQS managed encryption keys (SSE-SQS) for encryption. Add the encryption key invocation permission for the Lambda function.
+C. Use the AWS Lambda event source mapping. Set Amazon Simple Queue Service (Amazon SQS) FIFO queues as the event source. Use AWS KMS keys (SSE-KMS). Add the kms:Decrypt permission for the Lambda execution role.
+D. Use the AWS Lambda event source mapping. Set Amazon Simple Queue Service (Amazon SQS) standard queues as the event source. Use AWS KMS keys (SSE-KMS) for encryption. Add the encryption key invocation permission for the Lambda function.
+
+492)
+A company has multiple AWS accounts for development work. Some staff consistently use oversized Amazon EC2 instances, which causes the company to exceed the yearly budget for the development accounts. The company wants to centrally restrict the creation of AWS resources in these accounts.
+
+Which solution will meet these requirements with the LEAST development effort?
+
+A. Develop AWS Systems Manager templates that use an approved EC2 creation process. Use the approved Systems Manager templates to provision EC2 instances.
+B. Use AWS Organizations to organize the accounts into organizational units (OUs). Define and attach a service control policy (SCP) to control the usage of EC2 instance types.
+C. Configure an Amazon EventBridge rule that invokes an AWS Lambda function when an EC2 instance is created. Stop disallowed EC2 instance types.
+D. Set up AWS Service Catalog products for the staff to create the allowed EC2 instance types. Ensure that staff can deploy EC2 instances only by using the Service Catalog products.
+
+493)
+A company wants to use artificial intelligence (AI) to determine the quality of its customer service calls. The company currently manages calls in four different languages, including English. The company will offer new languages in the future. The company does not have the resources to regularly maintain machine learning (ML) models.
+
+The company needs to create written sentiment analysis reports from the customer service call recordings. The customer service call recording text must be translated into English.
+
+Which combination of steps will meet these requirements? (Choose three.)
+
+A. Use Amazon Comprehend to translate the audio recordings into English.
+B. Use Amazon Lex to create the written sentiment analysis reports.
+C. Use Amazon Polly to convert the audio recordings into text.
+D. Use Amazon Transcribe to convert the audio recordings in any language into text.
+E. Use Amazon Translate to translate text in any language to English.
+F. Use Amazon Comprehend to create the sentiment analysis reports.
+
+494)
+A company uses Amazon EC2 instances to host its internal systems. As part of a deployment operation, an administrator tries to use the AWS CLI to terminate an EC2 instance. However, the administrator receives a 403 (Access Denied) error message.
+
+The administrator is using an IAM role that has the following IAM policy attached:
+
+
+
+What is the cause of the unsuccessful request?
+
+A. The EC2 instance has a resource-based policy with a Deny statement.
+B. The principal has not been specified in the policy statement.
+C. The "Action" field does not grant the actions that are required to terminate the EC2 instance.
+D. The request to terminate the EC2 instance does not originate from the CIDR blocks 192.0.2.0/24 or 203.0.113.0/24.
+
+495)
+A company is conducting an internal audit. The company wants to ensure that the data in an Amazon S3 bucket that is associated with the company’s AWS Lake Formation data lake does not contain sensitive customer or employee data. The company wants to discover personally identifiable information (PII) or financial information, including passport numbers and credit card numbers.
+
+Which solution will meet these requirements?
+
+A. Configure AWS Audit Manager on the account. Select the Payment Card Industry Data Security Standards (PCI DSS) for auditing.
+B. Configure Amazon S3 Inventory on the S3 bucket Configure Amazon Athena to query the inventory.
+C. Configure Amazon Macie to run a data discovery job that uses managed identifiers for the required data types.
+D. Use Amazon S3 Select to run a report across the S3 bucket.
+
+496)
+A company uses on-premises servers to host its applications. The company is running out of storage capacity. The applications use both block storage and NFS storage. The company needs a high-performing solution that supports local caching without re-architecting its existing applications.
+
+Which combination of actions should a solutions architect take to meet these requirements? (Choose two.)
+
+A. Mount Amazon S3 as a file system to the on-premises servers.
+B. Deploy an AWS Storage Gateway file gateway to replace NFS storage.
+C. Deploy AWS Snowball Edge to provision NFS mounts to on-premises servers.
+D. Deploy an AWS Storage Gateway volume gateway to replace the block storage.
+E. Deploy Amazon Elastic File System (Amazon EFS) volumes and mount them to on-premises servers.
+
+497)
+A company has a service that reads and writes large amounts of data from an Amazon S3 bucket in the same AWS Region. The service is deployed on Amazon EC2 instances within the private subnet of a VPC. The service communicates with Amazon S3 over a NAT gateway in the public subnet. However, the company wants a solution that will reduce the data output costs.
+
+Which solution will meet these requirements MOST cost-effectively?
+
+A. Provision a dedicated EC2 NAT instance in the public subnet. Configure the route table for the private subnet to use the elastic network interface of this instance as the destination for all S3 traffic.
+B. Provision a dedicated EC2 NAT instance in the private subnet. Configure the route table for the public subnet to use the elastic network interface of this instance as the destination for all S3 traffic.
+C. Provision a VPC gateway endpoint. Configure the route table for the private subnet to use the gateway endpoint as the route for all S3 traffic.
+D. Provision a second NAT gateway. Configure the route table for the private subnet to use this NAT gateway as the destination for all S3 traffic.
+
+498)
+A company uses Amazon S3 to store high-resolution pictures in an S3 bucket. To minimize application changes, the company stores the pictures as the latest version of an S3 object. The company needs to retain only the two most recent versions of the pictures.
+
+The company wants to reduce costs. The company has identified the S3 bucket as a large expense.
+
+Which solution will reduce the S3 costs with the LEAST operational overhead?
+
+A. Use S3 Lifecycle to delete expired object versions and retain the two most recent versions.
+B. Use an AWS Lambda function to check for older versions and delete all but the two most recent versions.
+C. Use S3 Batch Operations to delete noncurrent object versions and retain only the two most recent versions.
+D. Deactivate versioning on the S3 bucket and retain the two most recent versions.
+
+499)
+A company needs to minimize the cost of its 1 Gbps AWS Direct Connect connection. The company's average connection utilization is less than 10%. A solutions architect must recommend a solution that will reduce the cost without compromising security.
+
+Which solution will meet these requirements?
+
+A. Set up a new 1 Gbps Direct Connect connection. Share the connection with another AWS account.
+B. Set up a new 200 Mbps Direct Connect connection in the AWS Management Console.
+C. Contact an AWS Direct Connect Partner to order a 1 Gbps connection. Share the connection with another AWS account.
+D. Contact an AWS Direct Connect Partner to order a 200 Mbps hosted connection for an existing AWS account.
+
+500)
+A company has multiple Windows file servers on premises. The company wants to migrate and consolidate its files into an Amazon FSx for Windows File Server file system. File permissions must be preserved to ensure that access rights do not change.
+
+Which solutions will meet these requirements? (Choose two.)
+
+A. Deploy AWS DataSync agents on premises. Schedule DataSync tasks to transfer the data to the FSx for Windows File Server file system.
+B. Copy the shares on each file server into Amazon S3 buckets by using the AWS CLI. Schedule AWS DataSync tasks to transfer the data to the FSx for Windows File Server file system.
+C. Remove the drives from each file server. Ship the drives to AWS for import into Amazon S3. Schedule AWS DataSync tasks to transfer the data to the FSx for Windows File Server file system.
+D. Order an AWS Snowcone device. Connect the device to the on-premises network. Launch AWS DataSync agents on the device. Schedule DataSync tasks to transfer the data to the FSx for Windows File Server file system.
+E. Order an AWS Snowball Edge Storage Optimized device. Connect the device to the on-premises network. Copy data to the device by using the AWS CLI. Ship the device back to AWS for import into Amazon S3. Schedule AWS DataSync tasks to transfer the data to the FSx for Windows File Server file system.
+
+
+
+
+
+
+
+
+
+
+
 
 
 
