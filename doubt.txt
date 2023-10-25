@@ -353,6 +353,61 @@ E. Physical maintenance of Outposts components Most Voted
 F. Providing extra capacity for Amazon ECS clusters to mitigate server failures and maintenance events
 
 
+601)
+A company runs its critical database on an Amazon RDS for PostgreSQL DB instance. The company wants to migrate to Amazon Aurora PostgreSQL with minimal downtime and data loss.
+
+Which solution will meet these requirements with the LEAST operational overhead?
+
+A. Create a DB snapshot of the RDS for PostgreSQL DB instance to populate a new Aurora PostgreSQL DB cluster.
+B. Create an Aurora read replica of the RDS for PostgreSQL DB instance. Promote the Aurora read replicate to a new Aurora PostgreSQL DB cluster.
+C. Use data import from Amazon S3 to migrate the database to an Aurora PostgreSQL DB cluster.
+D. Use the pg_dump utility to back up the RDS for PostgreSQL database. Restore the backup to a new Aurora PostgreSQL DB cluster.
+
+602)
+A company's infrastructure consists of hundreds of Amazon EC2 instances that use Amazon Elastic Block Store (Amazon EBS) storage. A solutions architect must ensure that every EC2 instance can be recovered after a disaster.
+
+What should the solutions architect do to meet this requirement with the LEAST amount of effort?
+
+A. Take a snapshot of the EBS storage that is attached to each EC2 instance. Create an AWS CloudFormation template to launch new EC2 instances from the EBS storage.
+B. Take a snapshot of the EBS storage that is attached to each EC2 instance. Use AWS Elastic Beanstalk to set the environment based on the EC2 template and attach the EBS storage.
+C. Use AWS Backup to set up a backup plan for the entire group of EC2 instances. Use the AWS Backup API or the AWS CLI to speed up the restore process for multiple EC2 instances.
+D. Create an AWS Lambda function to take a snapshot of the EBS storage that is attached to each EC2 instance and copy the Amazon Machine Images (AMIs). Create another Lambda function to perform the restores with the copied AMIs and attach the EBS storage.
+
+603)
+A company recently migrated to the AWS Cloud. The company wants a serverless solution for large-scale parallel on-demand processing of a semistructured dataset. The data consists of logs, media files, sales transactions, and IoT sensor data that is stored in Amazon S3. The company wants the solution to process thousands of items in the dataset in parallel.
+
+Which solution will meet these requirements with the MOST operational efficiency?
+
+A. Use the AWS Step Functions Map state in Inline mode to process the data in parallel.
+B. Use the AWS Step Functions Map state in Distributed mode to process the data in parallel.
+C. Use AWS Glue to process the data in parallel.
+D. Use several AWS Lambda functions to process the data in parallel.
+
+605)
+A company has several on-premises Internet Small Computer Systems Interface (ISCSI) network storage servers. The company wants to reduce the number of these servers by moving to the AWS Cloud. A solutions architect must provide low-latency access to frequently used data and reduce the dependency on on-premises servers with a minimal number of infrastructure changes.
+
+Which solution will meet these requirements?
+
+A. Deploy an Amazon S3 File Gateway.
+B. Deploy Amazon Elastic Block Store (Amazon EBS) storage with backups to Amazon S3.
+C. Deploy an AWS Storage Gateway volume gateway that is configured with stored volumes.
+D. Deploy an AWS Storage Gateway volume gateway that is configured with cached volumes.
+
+607)
+Exam question from Amazon's AWS Certified Solutions Architect - Associate SAA-C02
+Question #: 607
+
+609)
+A company is building a data analysis platform on AWS by using AWS Lake Formation. The platform will ingest data from different sources such as Amazon S3 and Amazon RDS. The company needs a secure solution to prevent access to portions of the data that contain sensitive information.
+
+Which solution will meet these requirements with the LEAST operational overhead?
+
+A. Create an IAM role that includes permissions to access Lake Formation tables.
+B. Create data filters to implement row-level security and cell-level security.
+C. Create an AWS Lambda function that removes sensitive information before Lake Formation ingests the data.
+D. Create an AWS Lambda function that periodically queries and removes sensitive information from Lake Formation tables.
+
+
 
 
 

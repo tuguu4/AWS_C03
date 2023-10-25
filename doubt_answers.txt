@@ -14,8 +14,6 @@
 543: AE 
 544: A
 550: BD
-
-
 555: A
 557: A 
 559: BE 
@@ -33,3 +31,9 @@
 593: A 
 597: B 
 599: ACE or ACD
+601: B 
+602: C
+603: B
+605: D
+607: B (Full Access policy already attached.)
+609: B
