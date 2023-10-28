@@ -1,3 +1,5 @@
+Friday (311->400)
+Failed tests:
 311
 319
 335
@@ -15,6 +17,17 @@
 396
 397
 
+--------------------------------------------------------------------------
+Saturday 401->500
+Failed tests:
+402
+412
+414(Least administrative overhead)
+422
+431
+436(Cost effective & without adding infra)
+440
+
+//440
 
 
-//400
